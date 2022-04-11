@@ -1,4 +1,3 @@
-#!/bin/sh
 
 # Copyright 2022 Bervianto Leo Pratama
 #
@@ -14,4 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-gunicorn "web.wsgi" -b 0.0.0.0:8000
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
